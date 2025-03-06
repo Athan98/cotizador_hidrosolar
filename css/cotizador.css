@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.resumen-electro{
+    width: 20%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div-electro {
+    width: 70%;
+    height: 70%;
+    overflow-y: auto; /* Activa el scroll vertical */
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    border: 1px solid #ccc; /* Solo para visualizar los límites */
+    padding: 10px; /* Espaciado interno */
+}
+
+.div-electro #form-nuevaCotizacion {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1%; /* Espaciado entre elementos */
+}
+.div-electro #form-nuevaCotizacion div{
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.div-electro #form-nuevaCotizacion div img{
+    width: 20%;
+    padding: 1%;
+}

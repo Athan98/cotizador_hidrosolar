@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COTIZADOR | Hidrosolar SAS</title>
+    <link rel="stylesheet" href="../css/cotizador.css" />
+    <script
+      src="https://kit.fontawesome.com/fa04600604.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="div-electro">
+        <form method="post" id="form-nuevaCotizacion">
+          <div class="tv">
+            <img src="../images/smart-tv.png" alt="" />
+            <input type="number" name="TV" id="cant-tv" />
+            <button class="btn-agregar" type="button">AGREGAR A LA LISTA</button>
+          </div>
+          <div class="heladera-freezer">
+            <img src="../images/refrigerator.png" alt="" />
+            <input type="number" name="Heladera/Freezer" id="cant-hel" />
+            <button class="btn-agregar" type="button">AGREGAR A LA LISTA</button>
+          </div>
+          <div class="freezer">
+            <img src="../images/freezer.png" alt="" />
+            <input type="number" name="Freezer" id="cant-freez" />
+            <button class="btn-agregar" type="button">AGREGAR A LA LISTA</button>
+          </div>
+          <div class="lamparas-LED">
+            <img src="../images/led-light.png" alt="" />
+            <input type="number" name="Lámpara LED" id="cant-led" />
+            <button class="btn-agregar" type="button">AGREGAR A LA LISTA</button>
+          </div>
+          <div class="lavarropas">
+            <img src="../images/washing-machine (1).png" alt="" />
+            <input type="number" name="Lavadora" id="cant-lav" />
+            <button class="btn-agregar" type="button">AGREGAR A LA LISTA</button>
+          </div>
+          <div class="cafetera">
+            <img src="../images/coffee-machine.png" alt="" />
+            <input type="number" name="Máquina de café" id="cant-cafe" />
+            <button class="btn-agregar" type="button">AGREGAR A LA LISTA</button>
+          </div>
+        </form>
+      </div>
+      <div class="resumen-electro">
+        <div class="resumen-electro-cotizar">
+          <p class="cant-electro" style="font-size: 2rem">0</p>
+          <p class="electro">electrodomésticos agregados a la lista</p>
+        </div>
+        <div class="div-btn-cotizar">
+          <button id="btn-cotizar" type="submit">CALCULAR COTIZACIÓN</button>
+        </div>
+        <div class="div-btn-borrar-cotizacion">
+          <button id="btn-borrar-cotizacion" type="button">
+            BORRAR COTIZACIÓN
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/cotizador.js"></script>
+  </body>
+</html>
