@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Selecciona el elemento donde se mostrará la cantidad total de electrodomésticos en el resumen
     const resumenCantidad = document.querySelector(".cant-electro");
 
+    const resumenCons=document.querySelector(".cons-electro")
+
     // Selecciona el botón de cotizar
     const botonCotizar = document.querySelector("#btn-cotizar");
 
@@ -16,14 +18,40 @@ document.addEventListener("DOMContentLoaded", () => {
     // Obtiene la lista de electrodomésticos almacenada en localStorage o inicializa un array vacío si no hay datos
     let listaElectro = JSON.parse(localStorage.getItem("listaElectro")) || [];
 
+    /*Consumo aproximado artefactos en WATTS*/
+    const consTV = 90;
+    const consHeladFreez = 150;
+    const consLampLED = 11;
+    const consLavarr = 175;
+    const consCafet = 900;
+    const consFreez = 250;
+
     // Función para actualizar la cantidad total en el resumen de electrodomésticos
     function actualizarResumen() {
         // Calcula la cantidad total sumando las cantidades de todos los electrodomésticos en la lista
         let totalElectro = 0;
+        let consTotalElectro = 0;
         listaElectro.forEach(item => {
             totalElectro += item.cantidad;
+            switch (item.nombre) {
+                case "TV": consTotalElectro += ((item.cantidad) * consTV);
+                    break;
+                case "Heladera/Freezer": consTotalElectro += ((item.cantidad) * consHeladFreez);
+                    break;
+                case "Freezer": consTotalElectro += ((item.cantidad) * consFreez);
+                    break;
+                case "Lámpara LED": consTotalElectro += ((item.cantidad) * consLampLED);
+                    break;
+                case "Lavadora": consTotalElectro += ((item.cantidad) * consLavarr);
+                    break;
+                case "Máquina de café": consTotalElectro += ((item.cantidad) * consCafet);
+                    break;
+
+                default: consTotalElectro += 0;
+            }
         });
         resumenCantidad.textContent = totalElectro;
+        resumenCons.textContent=consTotalElectro;
     }
 
     // Función para agregar un electrodoméstico a la lista de cotización
